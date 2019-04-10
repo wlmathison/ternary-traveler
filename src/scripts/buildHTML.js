@@ -32,9 +32,10 @@ const buildHTML = {
         let formLabel = document.createElement("label")
         formLabel.textContent = "CREATE NEW POINT OF INTEREST"
         newInterestForm.appendChild(formLabel);
-        newInterestForm.appendChild(htmlFactory.buildFieldset("Name", "Please enter point of interest name"));
-        newInterestForm.appendChild(htmlFactory.buildFieldset("Description", "Please enter description"));
-        newInterestForm.appendChild(htmlFactory.buildFieldset("Cost", "Please enter cost"));
+        newInterestForm.appendChild(htmlFactory.buildFieldset("Name", "Please enter point of interest name", "name-input"));
+        newInterestForm.appendChild(htmlFactory.buildFieldset("Description", "Please enter description", "description-input"));
+        newInterestForm.appendChild(htmlFactory.buildFieldset("Cost", "Please enter cost", "cost-input"));
+        newInterestForm.appendChild(htmlFactory.buildFieldset("Review", "Please enter your review", "review-input"));
         let dropdownFieldset = document.createElement("fieldset");
         let dropdownLabel = document.createElement("label");
         dropdownLabel.textContent = "Choose location";
@@ -52,7 +53,12 @@ const buildHTML = {
                 let saveButton = document.createElement("button");
                 saveButton.textContent = "Save Point Of Interest";
                 saveButton.addEventListener("click", () => {
-                    console.log("save button clicked")
+                    let place = dropdown.value;
+                    let name = document.getElementById("name-input").value;
+                    let description = document.getElementById("description-input").value;
+                    let cost = Number(document.getElementById("cost-input").value);
+                    let review =document.getElementById("review-input").value;
+                    apiManager.postInterest(htmlFactory.createInterestObject(place, name, description, cost, review))
                 })
                 newInterestForm.appendChild(saveButton);
                 displayContainer.appendChild(newInterestForm);

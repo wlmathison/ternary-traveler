@@ -8,7 +8,7 @@ const api = {
             .then(response => response.json())
     },
     postInterest(newInterest) {
-        return fetch("http://localhost:8088/places", {
+        return fetch("http://localhost:8088/interests", {
             method: "POST",
             headers: {
                 "content-type": "application/json"

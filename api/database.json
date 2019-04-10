@@ -1,43 +1,43 @@
 {
-    "places": [{
-            "id": 1,
-            "name": "Kathmandu",
-            "visa_required": true
-        },
-        {
-            "id": 2,
-            "name": "Dhaka",
-            "visa_required": true
-        },
-        {
-            "id": 3,
-            "name": "Mumbai",
-            "visa_required": false
-        }
-    ],
-    "interests": [{
-            "id": 1,
-            "placeId": 1,
-            "name": "Swayambhunath",
-            "description": "Swayambhunath is an ancient religious architecture atop a hill in the Kathmandu Valley, west of Kathmandu city. The Tibetan name for the site means 'Sublime Trees', for the many varieties of trees found on the hill.",
-            "cost": 0.00,
-            "review": ""
-        },
-        {
-            "id": 2,
-            "placeId": 2,
-            "name": "Ahsan Manzil",
-            "description": "Ahsan Manzil was the official residential palace and seat of the Nawab of Dhaka. The building is situated at Kumartoli along the banks of the Buriganga River in Dhaka, Bangladesh.",
-            "cost": 0.00,
-            "review": ""
-        },
-        {
-            "id": 3,
-            "placeId": 3,
-            "name": "Gateway Of India Mumbai",
-            "description": "The Gateway of India is an arch monument built during the 20th century in Mumbai, India. The monument was erected to commemorate the landing of King-EmperorGeorge V and Queen-Empress Mary at Apollo Bunder on their visit to India in 1911.",
-            "cost": 0.00,
-            "review": ""
-        }
-    ]
+  "places": [{
+      "id": 1,
+      "name": "Kathmandu",
+      "visa_required": true
+    },
+    {
+      "id": 2,
+      "name": "Dhaka",
+      "visa_required": true
+    },
+    {
+      "id": 3,
+      "name": "Mumbai",
+      "visa_required": false
+    }
+  ],
+  "interests": [{
+      "id": 1,
+      "placeId": 1,
+      "name": "Swayambhunath",
+      "description": "Swayambhunath is an ancient religious architecture atop a hill in the Kathmandu Valley, west of Kathmandu city. The Tibetan name for the site means 'Sublime Trees', for the many varieties of trees found on the hill.",
+      "cost": 0,
+      "review": ""
+    },
+    {
+      "id": 2,
+      "placeId": 2,
+      "name": "Ahsan Manzil",
+      "description": "Ahsan Manzil was the official residential palace and seat of the Nawab of Dhaka. The building is situated at Kumartoli along the banks of the Buriganga River in Dhaka, Bangladesh.",
+      "cost": 0,
+      "review": ""
+    },
+    {
+      "id": 3,
+      "placeId": 3,
+      "name": "Gateway Of India Mumbai",
+      "description": "The Gateway of India is an arch monument built during the 20th century in Mumbai, India. The monument was erected to commemorate the landing of King-EmperorGeorge V and Queen-Empress Mary at Apollo Bunder on their visit to India in 1911.",
+      "cost": 0,
+      "review": ""
+    }
+  ]
 }
