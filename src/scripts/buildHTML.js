@@ -26,11 +26,13 @@ const buildHTML = {
         interestPlace.textContent = place;
         containerDiv.appendChild(interestPlace);
         let editButton = document.createElement("button");
+        editButton.classList = "btn btn-warning"
         editButton.textContent = "Edit Interest";
         editButton.id = `edit-button--${id}`;
         editButton.addEventListener("click", eventHandlers.handleEditInterest);
         containerDiv.appendChild(editButton);
         let deleteButton = document.createElement("button");
+        deleteButton.classList = "btn btn-danger"
         deleteButton.textContent = "Delete Interest";
         deleteButton.id = `delete-button--${id}`;
         deleteButton.addEventListener("click", eventHandlers.handleDelete);
@@ -64,6 +66,7 @@ const buildHTML = {
                 dropdownFieldset.appendChild(dropdown);
                 newInterestForm.appendChild(dropdownFieldset);
                 let saveButton = document.createElement("button");
+                saveButton.classList = "btn btn-primary"
                 saveButton.textContent = "Save Point Of Interest";
                 saveButton.addEventListener("click", eventHandlers.handleSaveInterest)
                 newInterestForm.appendChild(saveButton);
@@ -102,6 +105,7 @@ const buildHTML = {
         }
         documentFrag.appendChild(reviewInput);
         let saveButton = document.createElement("button");
+        saveButton.classList = "btn btn-primary"
         saveButton.id = `save-button--${id}`;
         saveButton.textContent = "Save Changes";
         saveButton.addEventListener("click", eventHandlers.handleSaveEdit)

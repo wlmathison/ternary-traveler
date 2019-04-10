@@ -39,8 +39,10 @@ const eventHandlers = {
         let changeObj = htmlFactory.createChangeObject(costsChange, reviewChange)
         htmlFactory.clearContainer(displayContainer);
         apiManager.patchInterest(interestId, changeObj)
-            .then(appendHTML.appendInterests)
-            .then(buildHTML.buildNewInterestForm)
+            .then(() => {
+                buildHTML.buildNewInterestForm();
+                appendHTML.appendInterests()
+            });
     },
     handleDelete() {
         let interestId = event.target.id.split("--")[1];
@@ -48,8 +50,10 @@ const eventHandlers = {
         if (response) {
             htmlFactory.clearContainer(displayContainer);
             apiManager.deleteInterest(interestId)
-                .then(appendHTML.appendInterests)
-                .then(buildHTML.buildNewInterestForm)
+                .then(() => {
+                    buildHTML.buildNewInterestForm();
+                    appendHTML.appendInterests()
+                });
         }
     }
 }
