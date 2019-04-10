@@ -33,7 +33,7 @@ const buildHTML = {
         let deleteButton = document.createElement("button");
         deleteButton.textContent = "Delete Interest";
         deleteButton.id = `delete-button--${id}`;
-        // deleteButton.addEventListener("click", eventHandlers.handleEditInterest);
+        deleteButton.addEventListener("click", eventHandlers.handleDelete);
         containerDiv.appendChild(deleteButton);
         containerDiv.appendChild(document.createElement("hr"));
         displayContainer.appendChild(containerDiv);

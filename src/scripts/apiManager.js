@@ -28,6 +28,11 @@ const api = {
             },
             body: JSON.stringify(changesObject)
         })
+    },
+    deleteInterest(interestId) {
+        return fetch(`http://localhost:8088/interests/${interestId}`, {
+            method: "DELETE"
+        })
     }
 }
 

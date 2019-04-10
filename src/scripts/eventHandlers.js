@@ -41,6 +41,16 @@ const eventHandlers = {
         apiManager.patchInterest(interestId, changeObj)
             .then(appendHTML.appendInterests)
             .then(buildHTML.buildNewInterestForm)
+    },
+    handleDelete() {
+        let interestId = event.target.id.split("--")[1];
+        let response = confirm("Are you sure you want to delete this interest?")
+        if (response) {
+            htmlFactory.clearContainer(displayContainer);
+            apiManager.deleteInterest(interestId)
+                .then(appendHTML.appendInterests)
+                .then(buildHTML.buildNewInterestForm)
+        }
     }
 }
 
