@@ -14,6 +14,15 @@ const htmlFactory = {
         option.value = place;
         option.textContent = place;
         return option;
+    },
+    createInterestObject(placeId, name, description, cost, review) {
+        return {
+            "placeID": placeId,
+            "name": name,
+            "description": description,
+            "cost": cost,
+            "review": review
+        }
     }
 }
 
