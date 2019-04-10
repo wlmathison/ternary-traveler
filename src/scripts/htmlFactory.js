@@ -10,15 +10,15 @@ const htmlFactory = {
         fieldsetEl.appendChild(inputEl);
         return fieldsetEl;
     },
-    buildOption(place) {
+    buildOption(name, id) {
         let option = document.createElement("option");
-        option.value = place;
-        option.textContent = place;
+        option.value = id;
+        option.textContent = name;
         return option;
     },
     createInterestObject(placeId, name, description, cost, review) {
         return {
-            "placeID": placeId,
+            "placeId": placeId,
             "name": name,
             "description": description,
             "cost": cost,

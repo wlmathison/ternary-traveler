@@ -1,5 +1,6 @@
 import htmlFactory from "./htmlFactory"
 import apiManager from "./apiManager"
+import eventHandlers from "./eventHandlers"
 
 const displayContainer = document.getElementById("display-container");
 
@@ -41,25 +42,19 @@ const buildHTML = {
         dropdownLabel.textContent = "Choose location";
         dropdownFieldset.appendChild(dropdownLabel);
         let dropdown = document.createElement("select");
+        dropdown.id = "dropdown";
         dropdown.name = "location";
         apiManager.getPlaces()
             .then(places => {
                 places.forEach(place => {
-                    return dropdown.appendChild(htmlFactory.buildOption(place.name));
+                    return dropdown.appendChild(htmlFactory.buildOption(place.name, place.id));
                 })
             }).then(() => {
                 dropdownFieldset.appendChild(dropdown);
                 newInterestForm.appendChild(dropdownFieldset);
                 let saveButton = document.createElement("button");
                 saveButton.textContent = "Save Point Of Interest";
-                saveButton.addEventListener("click", () => {
-                    let place = dropdown.value;
-                    let name = document.getElementById("name-input").value;
-                    let description = document.getElementById("description-input").value;
-                    let cost = Number(document.getElementById("cost-input").value);
-                    let review =document.getElementById("review-input").value;
-                    apiManager.postInterest(htmlFactory.createInterestObject(place, name, description, cost, review))
-                })
+                saveButton.addEventListener("click", eventHandlers.handleSaveInterest)
                 newInterestForm.appendChild(saveButton);
                 displayContainer.appendChild(newInterestForm);
                 return newInterestForm;
