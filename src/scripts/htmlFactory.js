@@ -37,6 +37,17 @@ const htmlFactory = {
             "cost": cost,
             "review": review
         }
+    },
+    createChangeObject(cost, review) {
+        return {
+            "cost": cost,
+            "review": review
+        }
+    },
+    clearContainer(elementToClear) {
+        while (elementToClear.firstChild) {
+            elementToClear.removeChild(elementToClear.firstChild);
+        }
     }
 }
 

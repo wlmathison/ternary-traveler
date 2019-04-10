@@ -1,5 +1,6 @@
 {
-  "places": [{
+  "places": [
+    {
       "id": 1,
       "name": "Kathmandu",
       "visa_required": true
@@ -15,12 +16,13 @@
       "visa_required": false
     }
   ],
-  "interests": [{
+  "interests": [
+    {
       "id": 1,
       "placeId": 1,
       "name": "Swayambhunath",
       "description": "Swayambhunath is an ancient religious architecture atop a hill in the Kathmandu Valley, west of Kathmandu city. The Tibetan name for the site means 'Sublime Trees', for the many varieties of trees found on the hill.",
-      "cost": 0,
+      "cost": "0",
       "review": ""
     },
     {

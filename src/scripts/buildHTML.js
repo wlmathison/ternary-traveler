@@ -66,7 +66,7 @@ const buildHTML = {
                 return newInterestForm;
             })
     },
-    buildEditForm(name, description, cost, review, place) {
+    buildEditForm(name, description, cost, review, id) {
         let documentFrag = document.createDocumentFragment();
         let interestName = document.createElement("h2");
         interestName.textContent = name;
@@ -91,8 +91,9 @@ const buildHTML = {
         }
         documentFrag.appendChild(reviewInput);
         let saveButton = document.createElement("button");
+        saveButton.id = `save-button--${id}`;
         saveButton.textContent = "Save Changes";
-        // saveButton.addEventListener("click", eventHandlers.handleSaveInterest)
+        saveButton.addEventListener("click", eventHandlers.handleSaveEdit)
         documentFrag.appendChild(saveButton);
         return documentFrag;
 
