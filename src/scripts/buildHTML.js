@@ -24,6 +24,12 @@ const buildHTML = {
         let interestPlace = document.createElement("p");
         interestPlace.textContent = place;
         containerDiv.appendChild(interestPlace);
+        let editButton = document.createElement("button");
+        editButton.textContent = "Edit Interest";
+        editButton.addEventListener("click", () => {
+            console.log("edit button clicked")
+        })
+        containerDiv.appendChild(editButton);
         containerDiv.appendChild(document.createElement("hr"));
         displayContainer.appendChild(containerDiv);
         return containerDiv;
