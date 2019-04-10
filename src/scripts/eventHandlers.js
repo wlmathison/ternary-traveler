@@ -9,9 +9,12 @@ const eventHandlers = {
         let cost = Number(document.getElementById("cost-input").value);
         let review = document.getElementById("review-input").value;
 
-        apiManager.postInterest(htmlFactory.createInterestObject(place, name, description, cost, review))
-            .then(appendHTML.appendInterests)
-            .then(buildHTML.buildNewInterestForm)
+        if (name === "" || description === "") {
+            return false;
+        } else {
+            apiManager.postInterest(htmlFactory.createInterestObject(place, name, description, cost, review))
+        }
+
     }
 }
 

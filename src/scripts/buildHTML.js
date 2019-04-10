@@ -33,8 +33,8 @@ const buildHTML = {
         let formLabel = document.createElement("label")
         formLabel.textContent = "CREATE NEW POINT OF INTEREST"
         newInterestForm.appendChild(formLabel);
-        newInterestForm.appendChild(htmlFactory.buildFieldset("Name", "Please enter point of interest name", "name-input"));
-        newInterestForm.appendChild(htmlFactory.buildFieldset("Description", "Please enter description", "description-input"));
+        newInterestForm.appendChild(htmlFactory.buildRequiredFieldset("Name", "Please enter point of interest name", "name-input"));
+        newInterestForm.appendChild(htmlFactory.buildRequiredFieldset("Description", "Please enter description", "description-input"));
         newInterestForm.appendChild(htmlFactory.buildFieldset("Cost", "Please enter cost", "cost-input"));
         newInterestForm.appendChild(htmlFactory.buildFieldset("Review", "Please enter your review", "review-input"));
         let dropdownFieldset = document.createElement("fieldset");

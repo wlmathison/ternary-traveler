@@ -1,4 +1,17 @@
 const htmlFactory = {
+    buildRequiredFieldset(labelText, placeholderText, inputId) {
+        let fieldsetEl = document.createElement("fieldset");
+        let labelEl = document.createElement("label");
+        labelEl.textContent = labelText;
+        fieldsetEl.appendChild(labelEl);
+        let inputEl = document.createElement("input");
+        inputEl.id = inputId;
+        inputEl.setAttribute("required", "");
+        inputEl.required = true;
+        inputEl.placeholder = placeholderText;
+        fieldsetEl.appendChild(inputEl);
+        return fieldsetEl;
+    },
     buildFieldset(labelText, placeholderText, inputId) {
         let fieldsetEl = document.createElement("fieldset");
         let labelEl = document.createElement("label");
