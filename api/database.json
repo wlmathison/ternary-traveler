@@ -40,6 +40,54 @@
       "description": "The Gateway of India is an arch monument built during the 20th century in Mumbai, India. The monument was erected to commemorate the landing of King-EmperorGeorge V and Queen-Empress Mary at Apollo Bunder on their visit to India in 1911.",
       "cost": 0,
       "review": ""
+    },
+    {
+      "id": 4,
+      "placeId": 1,
+      "name": "Pashupatinath Temple",
+      "description": "The Pashupatinath Temple is a famous and sacred Hindu temple complex that is located on the banks of the Bagmati River, approximately 5 kilometres north-east of Kathmandu in the eastern part of Kathmandu Valley, the capital of Nepal.",
+      "cost": "0",
+      "review": ""
+    },
+    {
+      "id": 5,
+      "placeId": 1,
+      "name": "Boudhanath",
+      "description": "Boudhanath is a stupa in Kathmandu, Nepal. Located about 11 km from the center and northeastern outskirts of Kathmandu, the stupa's massive mandala makes it one of the largest spherical stupas in Nepal.",
+      "cost": "0",
+      "review": ""
+    },
+    {
+      "id": 6,
+      "placeId": 2,
+      "name": "Lalbagh Fort",
+      "description": "Lalbagh Fort is an incomplete 17th century Mughal fort complex that stands before the Buriganga River in the southwestern part of Dhaka, Bangladesh.",
+      "cost": "0",
+      "review": ""
+    },
+    {
+      "id": 7,
+      "placeId": 2,
+      "name": "Jatiya Sangsad Bhaban",
+      "description": "Jatiya Sangsad Bhaban or National Parliament House, is the house of the Parliament of Bangladesh, located at Sher-e-Bangla Nagar in the Bangladeshi capital of Dhaka.",
+      "cost": "0",
+      "review": ""
+    },
+    {
+      "id": 8,
+      "placeId": 3,
+      "name": "Elephanta Caves",
+      "description": "Elephanta Caves are a UNESCO World Heritage Site and a collection of cave temples predominantly dedicated to the Hindu god Shiva.",
+      "cost": "0",
+      "review": ""
+    },
+    {
+      "id": 6,
+      "placeId": 3,
+      "name": "Chhatrapati Shivaji Terminus railway station",
+      "description": "Chhatrapati Shivaji Maharaj Terminus, formerly known as Victoria Terminus, is a historic railway station and a UNESCO World Heritage Site in Mumbai, Maharashtra, India which serves as the headquarters of the Central Railways.",
+      "cost": "0",
+      "review": ""
     }
   ]
 }

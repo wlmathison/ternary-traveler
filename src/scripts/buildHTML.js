@@ -30,6 +30,11 @@ const buildHTML = {
         editButton.id = `edit-button--${id}`;
         editButton.addEventListener("click", eventHandlers.handleEditInterest);
         containerDiv.appendChild(editButton);
+        let deleteButton = document.createElement("button");
+        deleteButton.textContent = "Delete Interest";
+        deleteButton.id = `delete-button--${id}`;
+        // deleteButton.addEventListener("click", eventHandlers.handleEditInterest);
+        containerDiv.appendChild(deleteButton);
         containerDiv.appendChild(document.createElement("hr"));
         displayContainer.appendChild(containerDiv);
         return containerDiv;
@@ -74,6 +79,9 @@ const buildHTML = {
         let interestDescription = document.createElement("p");
         interestDescription.textContent = description;
         documentFrag.appendChild(interestDescription);
+        let costLabel = document.createElement("label");
+        costLabel.textContent = "Cost:";
+        documentFrag.appendChild(costLabel);
         let costInput = document.createElement("input");
         costInput.id = "edit-cost";
         if (cost !== "") {
@@ -82,6 +90,9 @@ const buildHTML = {
             costInput.placeholder = "Please enter cost";
         }
         documentFrag.appendChild(costInput);
+        let reviewLabel = document.createElement("label");
+        reviewLabel.textContent = "Review:";
+        documentFrag.appendChild(reviewLabel);
         let reviewInput = document.createElement("input");
         reviewInput.id = "edit-review";
         if (review !== "") {
