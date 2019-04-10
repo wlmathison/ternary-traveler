@@ -6,6 +6,15 @@ const api = {
     getPlaces() {
         return fetch("http://localhost:8088/places")
             .then(response => response.json())
+    },
+    postInterest(newInterest) {
+        return fetch("http://localhost:8088/places", {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(newInterest)
+        }).then(results => results.json())
     }
 }
 
