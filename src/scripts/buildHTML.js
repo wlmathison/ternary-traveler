@@ -49,6 +49,12 @@ const buildHTML = {
             }).then(() => {
                 dropdownFieldset.appendChild(dropdown);
                 newInterestForm.appendChild(dropdownFieldset);
+                let saveButton = document.createElement("button");
+                saveButton.textContent = "Save Point Of Interest";
+                saveButton.addEventListener("click", () => {
+                    console.log("save button clicked")
+                })
+                newInterestForm.appendChild(saveButton);
                 displayContainer.appendChild(newInterestForm);
                 return newInterestForm;
             })
