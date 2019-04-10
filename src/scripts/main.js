@@ -1,3 +1,4 @@
 import appendHTML from "./appendHTML"
+import buildHTML from "./buildHTML"
 
-appendHTML.appendInterests();
+appendHTML.appendInterests().then(buildHTML.buildNewInterestForm);

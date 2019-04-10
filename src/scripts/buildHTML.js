@@ -1,3 +1,6 @@
+import htmlFactory from "./htmlFactory"
+import apiManager from "./apiManager"
+
 const displayContainer = document.getElementById("display-container");
 
 const buildHTML = {
@@ -20,8 +23,35 @@ const buildHTML = {
         let interestPlace = document.createElement("p");
         interestPlace.textContent = place;
         containerDiv.appendChild(interestPlace);
+        containerDiv.appendChild(document.createElement("hr"));
         displayContainer.appendChild(containerDiv);
         return containerDiv;
+    },
+    buildNewInterestForm() {
+        let newInterestForm = document.createElement("form");
+        let formLabel = document.createElement("label")
+        formLabel.textContent = "CREATE NEW POINT OF INTEREST"
+        newInterestForm.appendChild(formLabel);
+        newInterestForm.appendChild(htmlFactory.buildFieldset("Name", "Please enter point of interest name"));
+        newInterestForm.appendChild(htmlFactory.buildFieldset("Description", "Please enter description"));
+        newInterestForm.appendChild(htmlFactory.buildFieldset("Cost", "Please enter cost"));
+        let dropdownFieldset = document.createElement("fieldset");
+        let dropdownLabel = document.createElement("label");
+        dropdownLabel.textContent = "Choose location";
+        dropdownFieldset.appendChild(dropdownLabel);
+        let dropdown = document.createElement("select");
+        dropdown.name = "location";
+        apiManager.getPlaces()
+            .then(places => {
+                places.forEach(place => {
+                    return dropdown.appendChild(htmlFactory.buildOption(place.name));
+                })
+            }).then(() => {
+                dropdownFieldset.appendChild(dropdown);
+                newInterestForm.appendChild(dropdownFieldset);
+                displayContainer.appendChild(newInterestForm);
+                return newInterestForm;
+            })
     }
 }
 
