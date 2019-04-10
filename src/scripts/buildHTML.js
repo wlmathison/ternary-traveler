@@ -8,6 +8,7 @@ const buildHTML = {
     buildInterest(name, description, cost, review, place, id) {
         let containerDiv = document.createElement("div");
         containerDiv.id = `interest-div--${id}`;
+        containerDiv.classList = "card-body"
         let interestName = document.createElement("h2");
         interestName.textContent = name;
         containerDiv.appendChild(interestName);
@@ -26,7 +27,7 @@ const buildHTML = {
         interestPlace.textContent = place;
         containerDiv.appendChild(interestPlace);
         let editButton = document.createElement("button");
-        editButton.classList = "btn btn-warning"
+        editButton.classList = "btn btn-info"
         editButton.textContent = "Edit Interest";
         editButton.id = `edit-button--${id}`;
         editButton.addEventListener("click", eventHandlers.handleEditInterest);
@@ -42,14 +43,19 @@ const buildHTML = {
         return containerDiv;
     },
     buildNewInterestForm() {
+        let formDiv = document.createElement("div");
+        formDiv.classList = "card";
+        let headerDiv = document.createElement("div")
+        headerDiv.classList = "card-header"
+        headerDiv.textContent = "CREATE NEW POINT OF INTEREST"
+        formDiv.appendChild(headerDiv);
+        let bodyDiv = document.createElement("div")
+        bodyDiv.classList = "card-body";
         let newInterestForm = document.createElement("form");
-        let formLabel = document.createElement("label")
-        formLabel.textContent = "CREATE NEW POINT OF INTEREST"
-        newInterestForm.appendChild(formLabel);
-        newInterestForm.appendChild(htmlFactory.buildRequiredFieldset("Name", "Please enter point of interest name", "name-input"));
-        newInterestForm.appendChild(htmlFactory.buildRequiredFieldset("Description", "Please enter description", "description-input"));
-        newInterestForm.appendChild(htmlFactory.buildFieldset("Cost", "Please enter cost", "cost-input"));
-        newInterestForm.appendChild(htmlFactory.buildFieldset("Review", "Please enter your review", "review-input"));
+        newInterestForm.appendChild(htmlFactory.buildRequiredFieldset("Name:", "Please enter point of interest", "name-input"));
+        newInterestForm.appendChild(htmlFactory.buildRequiredFieldset("Description:", "Please enter description", "description-input"));
+        newInterestForm.appendChild(htmlFactory.buildFieldset("Cost:", "Please enter cost", "cost-input"));
+        newInterestForm.appendChild(htmlFactory.buildFieldset("Review:", "Please enter your review", "review-input"));
         let dropdownFieldset = document.createElement("fieldset");
         let dropdownLabel = document.createElement("label");
         dropdownLabel.textContent = "Choose location";
@@ -65,12 +71,17 @@ const buildHTML = {
             }).then(() => {
                 dropdownFieldset.appendChild(dropdown);
                 newInterestForm.appendChild(dropdownFieldset);
+                bodyDiv.appendChild(newInterestForm)
+                formDiv.appendChild(bodyDiv);
+                let footerDiv = document.createElement("div");
+                footerDiv.classList = "card-footer";
                 let saveButton = document.createElement("button");
                 saveButton.classList = "btn btn-primary"
                 saveButton.textContent = "Save Point Of Interest";
                 saveButton.addEventListener("click", eventHandlers.handleSaveInterest)
-                newInterestForm.appendChild(saveButton);
-                displayContainer.appendChild(newInterestForm);
+                footerDiv.appendChild(saveButton);
+                formDiv.appendChild(footerDiv);
+                displayContainer.appendChild(formDiv);
                 return newInterestForm;
             })
     },
