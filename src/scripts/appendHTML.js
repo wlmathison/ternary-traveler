@@ -7,7 +7,7 @@ const appendHTML = {
             .then(interests => {
                 interests.forEach(interest => {
                     // console.log(interest.cost)
-                    buildHTML.buildInterest(interest.name, interest.description, interest.cost, interest.review, interest.place.name)
+                    buildHTML.buildInterest(interest.name, interest.description, interest.cost, interest.review, interest.place.name, interest.id)
                 })
             })
     }

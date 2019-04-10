@@ -5,8 +5,9 @@ import eventHandlers from "./eventHandlers"
 const displayContainer = document.getElementById("display-container");
 
 const buildHTML = {
-    buildInterest(name, description, cost, review, place) {
+    buildInterest(name, description, cost, review, place, id) {
         let containerDiv = document.createElement("div");
+        containerDiv.id = `interest-div--${id}`;
         let interestName = document.createElement("h2");
         interestName.textContent = name;
         containerDiv.appendChild(interestName);
@@ -26,9 +27,8 @@ const buildHTML = {
         containerDiv.appendChild(interestPlace);
         let editButton = document.createElement("button");
         editButton.textContent = "Edit Interest";
-        editButton.addEventListener("click", () => {
-            console.log("edit button clicked")
-        })
+        editButton.id = `edit-button--${id}`;
+        editButton.addEventListener("click", eventHandlers.handleEditInterest);
         containerDiv.appendChild(editButton);
         containerDiv.appendChild(document.createElement("hr"));
         displayContainer.appendChild(containerDiv);
@@ -65,6 +65,35 @@ const buildHTML = {
                 displayContainer.appendChild(newInterestForm);
                 return newInterestForm;
             })
+    },
+    buildEditForm(name, description, cost, review, place) {
+        let documentFrag = document.createDocumentFragment();
+        let interestName = document.createElement("h2");
+        interestName.textContent = name;
+        documentFrag.appendChild(interestName);
+        let interestDescription = document.createElement("p");
+        interestDescription.textContent = description;
+        documentFrag.appendChild(interestDescription);
+        let costInput = document.createElement("input");
+        if (cost !== "") {
+            costInput.placeholder = cost;
+        } else {
+            costInput.placeholder = "Please enter cost";
+        }
+        documentFrag.appendChild(costInput);
+        let reviewInput = document.createElement("input");
+        if (review !== "") {
+            reviewInput.placeholder = review;
+        } else {
+            reviewInput.placeholder = "Please enter review";
+        }
+        documentFrag.appendChild(reviewInput);
+        let saveButton = document.createElement("button");
+        saveButton.textContent = "Save Changes";
+        // saveButton.addEventListener("click", eventHandlers.handleSaveInterest)
+        documentFrag.appendChild(saveButton);
+        return documentFrag;
+
     }
 }
 
