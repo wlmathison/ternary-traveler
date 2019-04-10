@@ -25,6 +25,9 @@ const eventHandlers = {
             .then(interest => {
                 return interestDiv.appendChild(buildHTML.buildEditForm(interest.name, interest.description, interest.cost, interest.review));
             })
+    },
+    handleSaveEdit() {
+        
     }
 }
 

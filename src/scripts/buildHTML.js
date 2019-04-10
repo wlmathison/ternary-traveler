@@ -75,6 +75,7 @@ const buildHTML = {
         interestDescription.textContent = description;
         documentFrag.appendChild(interestDescription);
         let costInput = document.createElement("input");
+        costInput.id = "edit-cost";
         if (cost !== "") {
             costInput.placeholder = cost;
         } else {
@@ -82,6 +83,7 @@ const buildHTML = {
         }
         documentFrag.appendChild(costInput);
         let reviewInput = document.createElement("input");
+        reviewInput.id = "edit-review";
         if (review !== "") {
             reviewInput.placeholder = review;
         } else {

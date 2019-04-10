@@ -5,7 +5,7 @@ const api = {
     },
     getInterest(interestId) {
         return fetch(`http://localhost:8088/interests/${interestId}`)
-        .then(response => response.json())
+            .then(response => response.json())
     },
     getPlaces() {
         return fetch("http://localhost:8088/places")
@@ -19,6 +19,15 @@ const api = {
             },
             body: JSON.stringify(newInterest)
         }).then(results => results.json())
+    },
+    patchInterest(interestId, changesObject) {
+        return fetch(`http://localhost:8088/interests/${interestId}`, {
+            method: "PATCH",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(changesObject)
+        })
     }
 }
 
