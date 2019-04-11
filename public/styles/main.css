@@ -16,12 +16,23 @@ fieldset {
 #new-interest-form {
     position: fixed;
     right: 0;
+    top: 0px;
 }
 
-.form-header {
-    background-color: dimgray;
+.card-header {
+    background-color: darkgray;
 }
 
 .form-body {
-    background-color: darkgray;
+    background-color: lightgray;
+}
+
+.interests-header {
+    position: fixed;
+    width: 50%;
+    top: 0px;
+}
+
+.interests-body {
+    margin-top: 48px;
 }
