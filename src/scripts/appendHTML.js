@@ -4,6 +4,7 @@ import apiManager from "./apiManager"
 const displayContainer = document.getElementById("display-container");
 
 const appendHTML = {
+    // Function to append all interests to the DOM
     appendInterests() {
         const interestsContainer = document.createElement("div");
         interestsContainer.classList = "card split-div";
