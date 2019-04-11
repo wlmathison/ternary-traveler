@@ -1,5 +1,5 @@
 const htmlFactory = {
-    // Function to build and return a fieldset with label and input that is required 
+    // Function to build and return a fieldset with label and input that is required
     buildRequiredFieldset(labelText, placeholderText, inputId) {
         let fieldsetEl = document.createElement("fieldset");
         let labelEl = document.createElement("label");

@@ -22,23 +22,23 @@
       "placeId": 1,
       "name": "Swayambhunath",
       "description": "Swayambhunath is an ancient religious architecture atop a hill in the Kathmandu Valley, west of Kathmandu city. The Tibetan name for the site means 'Sublime Trees', for the many varieties of trees found on the hill.",
-      "cost": 0.00,
-      "review": ""
+      "cost": 200,
+      "review": "Beautiful scenery, lots of tourists but it still is away from the chaos of Kathmandu."
     },
     {
       "id": 2,
       "placeId": 2,
       "name": "Ahsan Manzil",
       "description": "Ahsan Manzil was the official residential palace and seat of the Nawab of Dhaka. The building is situated at Kumartoli along the banks of the Buriganga River in Dhaka, Bangladesh.",
-      "cost": 1.11,
-      "review": ""
+      "cost": 0,
+      "review": "Friends took us to this place. Authentic and feel sacred. Located in old town Dhaka. People are friendly."
     },
     {
       "id": 3,
       "placeId": 3,
       "name": "Gateway Of India Mumbai",
       "description": "The Gateway of India is an arch monument built during the 20th century in Mumbai, India. The monument was erected to commemorate the landing of King-EmperorGeorge V and Queen-Empress Mary at Apollo Bunder on their visit to India in 1911.",
-      "cost": 0.00,
+      "cost": 0,
       "review": ""
     },
     {
@@ -46,7 +46,7 @@
       "placeId": 1,
       "name": "Pashupatinath Temple",
       "description": "The Pashupatinath Temple is a famous and sacred Hindu temple complex that is located on the banks of the Bagmati River, approximately 5 kilometres north-east of Kathmandu in the eastern part of Kathmandu Valley, the capital of Nepal.",
-      "cost": 0.00,
+      "cost": 0,
       "review": ""
     },
     {
@@ -54,7 +54,7 @@
       "placeId": 1,
       "name": "Boudhanath",
       "description": "Boudhanath is a stupa in Kathmandu, Nepal. Located about 11 km from the center and northeastern outskirts of Kathmandu, the stupa's massive mandala makes it one of the largest spherical stupas in Nepal.",
-      "cost": 0.00,
+      "cost": 0,
       "review": ""
     },
     {
@@ -62,7 +62,7 @@
       "placeId": 2,
       "name": "Lalbagh Fort",
       "description": "Lalbagh Fort is an incomplete 17th century Mughal fort complex that stands before the Buriganga River in the southwestern part of Dhaka, Bangladesh.",
-      "cost": 0.00,
+      "cost": 0,
       "review": ""
     },
     {
@@ -70,7 +70,7 @@
       "placeId": 2,
       "name": "Jatiya Sangsad Bhaban",
       "description": "Jatiya Sangsad Bhaban or National Parliament House, is the house of the Parliament of Bangladesh, located at Sher-e-Bangla Nagar in the Bangladeshi capital of Dhaka.",
-      "cost": 0.00,
+      "cost": 0,
       "review": ""
     },
     {
@@ -78,7 +78,7 @@
       "placeId": 3,
       "name": "Elephanta Caves",
       "description": "Elephanta Caves are a UNESCO World Heritage Site and a collection of cave temples predominantly dedicated to the Hindu god Shiva.",
-      "cost": 0.00,
+      "cost": 0,
       "review": ""
     },
     {
@@ -86,7 +86,7 @@
       "placeId": 3,
       "name": "Chhatrapati Shivaji Terminus railway station",
       "description": "Chhatrapati Shivaji Maharaj Terminus, formerly known as Victoria Terminus, is a historic railway station and a UNESCO World Heritage Site in Mumbai, Maharashtra, India which serves as the headquarters of the Central Railways.",
-      "cost": 0.00,
+      "cost": 0,
       "review": ""
     }
   ]

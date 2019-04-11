@@ -22,11 +22,11 @@ const buildHTML = {
         containerDiv.appendChild(interestCost);
         if (review !== "") {
             let interestReview = document.createElement("p");
-            interestReview.textContent = review;
+            interestReview.textContent = `Review: ${review}`;
             containerDiv.appendChild(interestReview);
         }
         let interestPlace = document.createElement("p");
-        interestPlace.textContent = place;
+        interestPlace.textContent = `City: ${place}`;
         interestPlace.style.fontStyle = "italic";
         containerDiv.appendChild(interestPlace);
         let editButton = document.createElement("button");
@@ -51,11 +51,11 @@ const buildHTML = {
         formDiv.classList = "card split-div";
         formDiv.id = "new-interest-form";
         let headerDiv = document.createElement("div")
-        headerDiv.classList = "card-header"
+        headerDiv.classList = "card-header form-header"
         headerDiv.textContent = "CREATE NEW POINT OF INTEREST"
         formDiv.appendChild(headerDiv);
         let bodyDiv = document.createElement("div")
-        bodyDiv.classList = "card-body";
+        bodyDiv.classList = "card-body form-body";
         let newInterestForm = document.createElement("form");
         newInterestForm.appendChild(htmlFactory.buildRequiredFieldset("Name:", "Please enter name", "name-input"));
         newInterestForm.appendChild(htmlFactory.buildRequiredFieldset("Description:", "Please enter description", "description-input"));

@@ -13,13 +13,17 @@ const appendHTML = {
         return apiManager.getAllInterests()
             .then(interests => {
                 let headerDiv = document.createElement("div");
-                headerDiv.classList = "card-header"
+                headerDiv.classList = "card-header interests-header"
                 headerDiv.textContent = "POINTS OF INTEREST";
                 interestsContainer.appendChild(headerDiv);
+                let interestsDiv = document.createElement("div");
+                interestsDiv.classList = "interests-body";
 
                 interests.forEach(interest => {
-                    interestsContainer.appendChild(buildHTML.buildInterest(interest.name, interest.description, Number(interest.cost), interest.review, interest.place.name, interest.id))
+
+                    interestsDiv.appendChild(buildHTML.buildInterest(interest.name, interest.description, Number(interest.cost), interest.review, interest.place.name, interest.id))
                 })
+                interestsContainer.appendChild(interestsDiv);
             })
     }
 }
