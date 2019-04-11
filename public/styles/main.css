@@ -1,0 +1,17 @@
+fieldset {
+    display: flex;
+}
+
+.split-div {
+    width: 50%;
+    height: fit-content;
+}
+
+#display-container {
+    display: flex;
+}
+
+#new-interest-form {
+    position: fixed;
+    right: 0;
+}
