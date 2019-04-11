@@ -5,6 +5,7 @@ import eventHandlers from "./eventHandlers"
 const displayContainer = document.getElementById("display-container");
 
 const buildHTML = {
+    // Function to build an interest with HTML and return it in a document fragment
     buildInterest(name, description, cost, review, place, id) {
         let documentFrag = document.createDocumentFragment();
         let containerDiv = document.createElement("div");
@@ -44,6 +45,7 @@ const buildHTML = {
         documentFrag.appendChild(containerDiv);
         return documentFrag;
     },
+    // Function to build the form for adding a new interest
     buildNewInterestForm() {
         let formDiv = document.createElement("div");
         formDiv.classList = "card split-div";
@@ -86,6 +88,7 @@ const buildHTML = {
                 return newInterestForm;
             })
     },
+    // Function to build the form component to edit an interest after edit button has been clicked
     buildEditForm(name, description, cost, review, id) {
         let documentFrag = document.createDocumentFragment();
         let interestName = document.createElement("h2");

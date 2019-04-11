@@ -2,6 +2,7 @@ fieldset {
     display: flex;
 }
 
+/* having the two container divs each take up 50% of the DOM */
 .split-div {
     width: 50%;
     height: fit-content;
@@ -11,6 +12,7 @@ fieldset {
     display: flex;
 }
 
+/* Fixing the form to the top right of the DOM  */
 #new-interest-form {
     position: fixed;
     right: 0;
