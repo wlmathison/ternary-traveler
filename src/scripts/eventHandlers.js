@@ -12,13 +12,18 @@ const eventHandlers = {
         let description = document.getElementById("description-input").value;
         let cost = Number(document.getElementById("cost-input").value);
         let review = document.getElementById("review-input").value;
-
+        console.log("1")
         if (name === "" || description === "") {
+            console.log("hello");
             return false;
         } else {
             apiManager.postInterest(htmlFactory.createInterestObject(place, name, description, cost, review))
+                .then(() => {
+                    htmlFactory.clearContainer(displayContainer);
+                    return buildHTML.buildNewInterestForm()
+                        .then(appendHTML.appendInterests);
+                })
         }
-
     },
     handleEditInterest() {
         let interestId = event.target.id.split("--")[1];
@@ -52,7 +57,7 @@ const eventHandlers = {
             apiManager.deleteInterest(interestId)
                 .then(() => {
                     buildHTML.buildNewInterestForm();
-                    appendHTML.appendInterests()
+                    appendHTML.appendInterests();
                 });
         }
     }

@@ -6,6 +6,7 @@ const displayContainer = document.getElementById("display-container");
 
 const buildHTML = {
     buildInterest(name, description, cost, review, place, id) {
+        let documentFrag = document.createDocumentFragment();
         let containerDiv = document.createElement("div");
         containerDiv.id = `interest-div--${id}`;
         containerDiv.classList = "card-body"
@@ -16,7 +17,7 @@ const buildHTML = {
         interestDescription.textContent = description;
         containerDiv.appendChild(interestDescription);
         let interestCost = document.createElement("p");
-        interestCost.textContent = cost;
+        interestCost.textContent = `Cost: $${cost}`;
         containerDiv.appendChild(interestCost);
         if (review !== "") {
             let interestReview = document.createElement("p");
@@ -25,6 +26,7 @@ const buildHTML = {
         }
         let interestPlace = document.createElement("p");
         interestPlace.textContent = place;
+        interestPlace.style.fontStyle = "italic";
         containerDiv.appendChild(interestPlace);
         let editButton = document.createElement("button");
         editButton.classList = "btn btn-info"
@@ -39,12 +41,13 @@ const buildHTML = {
         deleteButton.addEventListener("click", eventHandlers.handleDelete);
         containerDiv.appendChild(deleteButton);
         containerDiv.appendChild(document.createElement("hr"));
-        displayContainer.appendChild(containerDiv);
-        return containerDiv;
+        documentFrag.appendChild(containerDiv);
+        return documentFrag;
     },
     buildNewInterestForm() {
         let formDiv = document.createElement("div");
-        formDiv.classList = "card";
+        formDiv.classList = "card split-div";
+        formDiv.id = "new-interest-form";
         let headerDiv = document.createElement("div")
         headerDiv.classList = "card-header"
         headerDiv.textContent = "CREATE NEW POINT OF INTEREST"
@@ -52,7 +55,7 @@ const buildHTML = {
         let bodyDiv = document.createElement("div")
         bodyDiv.classList = "card-body";
         let newInterestForm = document.createElement("form");
-        newInterestForm.appendChild(htmlFactory.buildRequiredFieldset("Name:", "Please enter point of interest", "name-input"));
+        newInterestForm.appendChild(htmlFactory.buildRequiredFieldset("Name:", "Please enter name", "name-input"));
         newInterestForm.appendChild(htmlFactory.buildRequiredFieldset("Description:", "Please enter description", "description-input"));
         newInterestForm.appendChild(htmlFactory.buildFieldset("Cost:", "Please enter cost", "cost-input"));
         newInterestForm.appendChild(htmlFactory.buildFieldset("Review:", "Please enter your review", "review-input"));
@@ -71,16 +74,14 @@ const buildHTML = {
             }).then(() => {
                 dropdownFieldset.appendChild(dropdown);
                 newInterestForm.appendChild(dropdownFieldset);
-                bodyDiv.appendChild(newInterestForm)
-                formDiv.appendChild(bodyDiv);
-                let footerDiv = document.createElement("div");
-                footerDiv.classList = "card-footer";
+                newInterestForm.appendChild(document.createElement("hr"));
                 let saveButton = document.createElement("button");
                 saveButton.classList = "btn btn-primary"
                 saveButton.textContent = "Save Point Of Interest";
-                saveButton.addEventListener("click", eventHandlers.handleSaveInterest)
-                footerDiv.appendChild(saveButton);
-                formDiv.appendChild(footerDiv);
+                saveButton.addEventListener("click", eventHandlers.handleSaveInterest);
+                newInterestForm.appendChild(saveButton);
+                bodyDiv.appendChild(newInterestForm)
+                formDiv.appendChild(bodyDiv);
                 displayContainer.appendChild(formDiv);
                 return newInterestForm;
             })
@@ -122,7 +123,6 @@ const buildHTML = {
         saveButton.addEventListener("click", eventHandlers.handleSaveEdit)
         documentFrag.appendChild(saveButton);
         return documentFrag;
-
     }
 }
 
