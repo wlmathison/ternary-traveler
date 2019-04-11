@@ -17,3 +17,11 @@ fieldset {
     position: fixed;
     right: 0;
 }
+
+.form-header {
+    background-color: dimgray;
+}
+
+.form-body {
+    background-color: darkgray;
+}
